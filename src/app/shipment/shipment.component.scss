@@ -6,13 +6,25 @@
   }
 }
 
+.container-shipments {
+  width: 60%;
+  text-align: right;
+  position: absolute;
+  left: 20%;
+  display: block;
+  top: 15%;
+}
 
+.label-error {
+  font-size: 12px;
+  margin-top: -15px;
+  margin-bottom: 15px;
+}
 
 .containe-img {
   img {
     width: 100%;
     height: 100vh;
-
   }
 }
 
@@ -32,4 +44,40 @@
 .example-button-container button {
   position: absolute;
   margin-top: 35px;
+  background-color: #c2185b;
+  color: white;
+  &:enabled {
+    background-color: #00a1fc;
+    color: white;
+  }
+}
+
+.right-text {
+  text-align: right;
+}
+
+.results {
+  width: 80%;
+  left: 10%;
+  position: relative;
+}
+
+.mat-card {
+  padding: 16px;
+  border-radius: 4px;
+  width: 50%;
+  margin-left: 24%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.content {
+  width: 100%;
+  height: 140px;
+  display: grid; // seccionar los dos contenedores
+  grid-template-rows: 1fr 1fr; // dos fracciones como filas
+}
+
+.mat-expansion-panel {
+  margin: 10px 10px;
 }

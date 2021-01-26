@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-provider',
   templateUrl: './provider.component.html',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProviderComponent implements OnInit {
 
+  cost: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  typeCost() {
+    this.cost = !this.cost;
   }
 
 }

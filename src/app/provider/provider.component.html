@@ -1,3 +1,38 @@
-<p>
-  provider works!
-</p>
+<h2 style="color: #fff; text-align: center">Solicitudes Pendientes</h2>
+
+<div class="request-list">
+  <mat-card>
+    <mat-card-title>Title</mat-card-title>
+    <mat-card-content>
+      <div class="separated">
+        <mat-list>
+          <mat-list-item> Pepper: </mat-list-item>
+          <mat-list-item> Salt: </mat-list-item>
+          <mat-list-item> Paprika: </mat-list-item>
+        </mat-list>
+        <mat-list class="right-text">
+          <mat-list-item> Pepper </mat-list-item>
+          <mat-list-item> Salt </mat-list-item>
+          <mat-list-item> Paprika </mat-list-item>
+        </mat-list>
+      </div>
+      <div class="cost-section">
+        <section class="example-section">
+          <mat-checkbox class="example-margin" (click)="typeCost()">Monto</mat-checkbox>
+        </section>
+        <mat-form-field class="example-full-width" *ngIf="cost">
+          <mat-label>Shipment Cost</mat-label>
+          <input matInput placeholder="Cost" value="" />
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button id="decline">Decline</button>
+      <button mat-button id="send">Send</button></mat-card-actions
+    >
+  </mat-card>
+  <mat-card>Simple card</mat-card>
+  <mat-card>Simple card</mat-card>
+</div>

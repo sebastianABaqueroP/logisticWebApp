@@ -1,79 +1,196 @@
-<div style="
-background: #424242;">
-  <ng-container>
-    <mat-card>
-      <mat-card-title class="title-card">
-        <p>
-          Welcome to Kargoru's Shipment
-        </p>
-      </mat-card-title>
-      <form [formGroup]="shipmentForm" (ngSubmit)="onSubmit()">
+<!-- <div class="containe-img">
+  <img
+    src="../../assets/images/ship_air.jpg"
+    alt="woldmap"
+    class="woldmap-img"
+  />
+</div> -->
 
-        <mat-form-field appearance="outline" class="form">
-          <mat-label>Port From</mat-label>
-          <input id="port" name="port" class="from-control" matInput placeholder="Port from" formControlName="portFrom"
-            [(ngModel)]="dataShipment[0].portFrom">
-        </mat-form-field>
-        <div *ngIf="shipmentForm.controls['portFrom'].invalid">
-          <div class="alert" *ngIf="shipmentForm.controls['portFrom'].errors.required">
-            <mat-error>
-              Port is required.
-            </mat-error>
-          </div>
-        </div>
-
-        <mat-form-field appearance="outline" class="form">
-          <mat-label>Port To</mat-label>
-          <input matInput placeholder="Port To" formControlName="portTo">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill" class="form">
-          <mat-label>Merchandise Type</mat-label>
-          <mat-select [(ngModel)]="merchandaiseValue" name="merchandiseType" formControlName="merchandaise">
-            <mat-option *ngFor="let merchandise of merchandaiseType" [value]="merchandise.value">
-              {{merchandise.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="form">
-          <mat-label>Merchandise Price</mat-label>
-          <input matInput placeholder="Price of Merchandise" formControlName="price">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill" class="form">
-          <mat-label>Container Type</mat-label>
-          <mat-select [(ngModel)]="containerValue" name="containerType" formControlName="containerType">
-            <mat-option *ngFor="let container of containersType" [value]="container.value">
-              {{container.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <section>
-          <div class="example-button-row">
-            <div class="example-flex-container">
-              <div class="example-button-container">
-                <button mat-fab color="primary" aria-label="Example icon button with a home icon" type="submit"
-                  [disabled]="!shipmentForm.valid">
-                  <mat-icon>receipt</mat-icon>
-                </button>
-              </div>
+<div class="content">
+  <div>
+    <ng-container>
+      <mat-card>
+        <mat-card-title class="title-card">
+          <p>Welcome to Kargoru's Shipment</p>
+        </mat-card-title>
+        <form [formGroup]="shipmentForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline" class="form">
+            <mat-label>Port From</mat-label>
+            <input
+              id="portFrom"
+              name="portFrom"
+              class="from-control"
+              matInput
+              placeholder="Port from"
+              formControlName="portFrom"
+              [(ngModel)]="dataShipment[0].portFrom"
+            />
+          </mat-form-field>
+          <div *ngIf="shipmentForm.controls['portFrom'].invalid">
+            <div *ngIf="shipmentForm.controls['portFrom'].errors.required">
+              <mat-error class="label-error">Port From is required.</mat-error>
             </div>
           </div>
-        </section>
 
-      </form>
+          <mat-form-field appearance="outline" class="form">
+            <mat-label>Port To</mat-label>
+            <input
+              id="portTo"
+              name="portTo"
+              class="from-control"
+              matInput
+              placeholder="Port To"
+              formControlName="portTo"
+              [(ngModel)]="dataShipment[0].portTo"
+            />
+          </mat-form-field>
+          <div *ngIf="shipmentForm.controls['portTo'].invalid">
+            <div *ngIf="shipmentForm.controls['portTo'].errors.required">
+              <mat-error class="label-error">Port To is required.</mat-error>
+            </div>
+          </div>
 
-      <!--
+          <mat-form-field appearance="fill" class="form">
+            <mat-label>Merchandise Type</mat-label>
+            <mat-select
+              id="merchandiseType"
+              name="merchandiseType"
+              class="from-control"
+              [(ngModel)]="dataShipment[0].merchandise"
+              formControlName="merchandise"
+            >
+              <mat-option
+                *ngFor="let merchandise of merchandiseType"
+                [value]="merchandise.value"
+              >
+                {{ merchandise.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div *ngIf="shipmentForm.controls['merchandise'].invalid">
+            <div *ngIf="shipmentForm.controls['merchandise'].errors.required">
+              <mat-error class="label-error"
+                >Merchandise Type is required.</mat-error
+              >
+            </div>
+          </div>
+
+          <mat-form-field appearance="fill" class="form">
+            <mat-label>Merchandise Price</mat-label>
+            <input
+              id="price"
+              name="price"
+              class="from-control right-text"
+              matInput
+              [(ngModel)]="dataShipment[0].price"
+              placeholder="Price of Merchandise"
+              formControlName="price"
+              type="text"
+            />
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+          <div *ngIf="shipmentForm.controls['price'].invalid">
+            <div *ngIf="shipmentForm.controls['price'].errors.required">
+              <mat-error class="label-error"
+                >Merchandise Price is required.</mat-error
+              >
+            </div>
+          </div>
+
+          <mat-form-field appearance="fill" class="form">
+            <mat-label>Container Type</mat-label>
+            <mat-select
+              id="containerType"
+              name="containerType"
+              class="from-control"
+              [(ngModel)]="dataShipment[0].containerType"
+              formControlName="containerType"
+            >
+              <mat-option
+                *ngFor="let container of containersType"
+                [value]="container.value"
+              >
+                {{ container.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div *ngIf="shipmentForm.controls['containerType'].invalid">
+            <div *ngIf="shipmentForm.controls['containerType'].errors.required">
+              <mat-error class="label-error"
+                >Container Type is required.</mat-error
+              >
+            </div>
+          </div>
+
+          <mat-form-field appearance="fill" class="form">
+            <mat-label>Issurance</mat-label>
+            <mat-select
+              id="issurance"
+              name="issurance"
+              class="from-control"
+              [(ngModel)]="dataShipment[0].issurance"
+              formControlName="issurance"
+            >
+              <mat-option
+                *ngFor="let issurance of issuranceType"
+                [value]="issurance.value"
+              >
+                {{ issurance.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div *ngIf="shipmentForm.controls['issurance'].invalid">
+            <div *ngIf="shipmentForm.controls['issurance'].errors.required">
+              <mat-error class="label-error"
+                >Issurance is required.</mat-error
+              >
+            </div>
+          </div>
+
+          <section>
+            <div class="example-button-row">
+              <div class="example-flex-container">
+                <div class="example-button-container">
+                  <button
+                    mat-fab
+                    color="primary"
+                    aria-label="Example icon button with a home icon"
+                    type="submit"
+                    [disabled]="!shipmentForm.valid"
+                  >
+                    <mat-icon>receipt</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </form>
+
+        <!--
         <mat-select-country appearance="outline" label="Country" [formControl]="countryFormControl"
           (onCountrySelected)="onCountrySelected($event)">
         </mat-select-country>
       -->
-
-    </mat-card>
-  </ng-container>
-</div>
-<div class="containe-img">
-  <img src="../../assets/images/ship_air.jpg" alt="woldmap" class="woldmap-img">
+      </mat-card>
+    </ng-container>
+  </div>
+  <div class="results" *ngIf="showDetails">
+    <ng-container>
+      <mat-accordion *ngFor="let option of optionsShipment">
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title> {{ option.name }} </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{ option.id }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>{{ option.data[0].cost }}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </ng-container>
+  </div>
 </div>

@@ -1,7 +1,30 @@
-.footer {
-    position: relative;
-    background-color: #2457c2;
-    color: #fff;
-    padding-top: 48px;
-    z-index: 10;
+
+
+.grid-content {
+  width: 100%;
+  height: 140px;
+  display: grid; // seccionar los dos contenedores
+  grid-template-rows: 1fr 1fr 1fr; // tres fracciones como filas
+}
+
+.header {
+  height: 20vh;
+  /*Or fixed pixel unit*/
+  background-color: green;
+}
+footer {
+  height: 20vh;
+  /*Or fixed pixel unit*/
+  background-color: #2457c2;
+  color: #fff;
+  padding-top: 48px;
+  z-index: 10;
+}
+.content {
+  height: calc(80vh);
+  /* - Height: calc(100vh - (navheight + footer))
+        - Over flow y make the dive scrollable 
+     when it exceed the fixed height*/
+  overflow-y: auto;
+  transition: all 0.5s;
 }

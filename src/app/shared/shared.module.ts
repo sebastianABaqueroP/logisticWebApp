@@ -14,6 +14,9 @@ import {
   MatInputModule,
   MatDividerModule,
   MatSelectModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatCheckboxModule
 } from "@angular/material";
 
 @NgModule({
@@ -30,6 +33,9 @@ import {
     MatFormFieldModule,
     MatCardModule,
     MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatCheckboxModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [
@@ -46,7 +52,10 @@ import {
     MatSelectModule,
     MatFormFieldModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatCheckboxModule,
   ],
 })
 export class SharedModule {}

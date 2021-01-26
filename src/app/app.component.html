@@ -1,7 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-header (menuEvent)="openMenu($event)" ></app-header>
-<div>
+<div class=“header”> 
+  <app-header (menuEvent)="openMenu($event)"></app-header>   
+</div>
+<div class=“content”> 
   <app-sidenav [showFiller]="showMenuOptions"></app-sidenav>
   <router-outlet></router-outlet>
 </div>
-<app-footer class="footer"></app-footer>
+<!-- <div class=“footer”> 
+  <app-footer class="footer"></app-footer>
+</div> -->
