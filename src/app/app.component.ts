@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'logistic-app';
+
+  showMenuOptions: boolean = false;
+
+  openMenu() {
+    this.showMenuOptions = !this.showMenuOptions;
+  }
 }

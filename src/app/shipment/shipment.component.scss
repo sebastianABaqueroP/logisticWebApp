@@ -1,0 +1,35 @@
+.title-card {
+  text-align: center;
+
+  p {
+    font-size: 18px;
+  }
+}
+
+
+
+.containe-img {
+  img {
+    width: 100%;
+    height: 100vh;
+
+  }
+}
+
+.form {
+  width: 100%;
+  font-size: 12px;
+}
+
+.woldmap-img path {
+  fill: #424242;
+}
+
+.example-button-row {
+  text-align: center;
+}
+
+.example-button-container button {
+  position: absolute;
+  margin-top: 35px;
+}

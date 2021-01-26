@@ -1,0 +1,11 @@
+<mat-sidenav-container class="example-container" *ngIf="showFiller">
+  <mat-sidenav mode="over">
+  </mat-sidenav>
+  <mat-list role="list" class="list">
+    <a mat-list-item role="listitem" href="/shipments" routerLinkActive="active" class="list__a">Shipment</a>
+    <a mat-list-item role="listitem" href="/providers" routerLinkActive="active" class="list__a">Providers</a>
+    <a mat-list-item role="listitem" href="/about" routerLinkActive="active" class="list__a">About US </a>
+  </mat-list>
+</mat-sidenav-container>
+
+<router-outlet></router-outlet>
