@@ -6,6 +6,7 @@ import {
   Validators,
 } from "@angular/forms";
 // import { Country } from "@angular-material-extensions/select-country";
+import { ShipmentService } from '../core/services/shipment.service';
 
 export interface DataShipmentModel {
   portFrom: string;
@@ -90,9 +91,12 @@ export class ShipmentComponent implements OnInit {
     { id: 3, name: "opcion3", data: [{ cost: 500 }] },
   ];
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private shipmentService:ShipmentService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    this.shipmentService.getShipments('http://localhost:3000/shipment/all')
+  }
 
   onSubmit() {
     console.log("data: ", this.shipmentForm.value);

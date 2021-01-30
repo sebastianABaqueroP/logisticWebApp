@@ -1,5 +1,15 @@
 import { Component } from '@angular/core';
 
+interface shipment {
+  portFrom: string;
+  portTo: string;
+  merchandise: string;
+  price: number;
+  containerType: string;
+  insurance: string;
+  created_at: Date;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
