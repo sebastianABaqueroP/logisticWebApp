@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: "**",
-    redirectTo: "shipments",
+    component: ShipmentComponent,
   },
 ];
 
